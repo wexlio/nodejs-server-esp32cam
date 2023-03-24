@@ -1,18 +1,12 @@
-version: '1.0'
+version: '9'
+name: nodejs-server-esp32cam
+
 services:
   app:
-    build: .
-    command: npm start
-    env:
-      HTTP_PORT: 8080
-    command: node index.js
-    services:
-      - port: ${{ HTTP_PORT }}
-    volumes:
-      - .:/app
-      - /app/node_modules
-    websocket:
-    command: npm start
-    internal: true
-    services:
-      - port: 18650
+    envs:
+      - PORT=8080
+    buildCommand: 'npm install'
+    runCommand: 'npm run start'
+    ports:
+      - 8080:8080/tcp
+      - 18650:18650/tcp
