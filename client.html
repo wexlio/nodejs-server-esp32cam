@@ -6,7 +6,7 @@
         <img src="">
         <script>
             const img = document.querySelector('img');
-            const WS_URL = 'wss://server-esp32cam.up.railway.app:18650';
+            const WS_URL = 'ws://server-esp32cam.up.railway.app:18650';
             const ws = new WebSocket(WS_URL);
             let urlObject;
             ws.onopen = () => console.log(`Connected to ${WS_URL}`);
