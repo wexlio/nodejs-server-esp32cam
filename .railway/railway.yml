@@ -1,0 +1,13 @@
+version: '1.0'
+services:
+  app:
+    build: .
+    command: npm start
+    env:
+      NODE_ENV: production
+    ports:
+      - 8080:8080/tcp
+      - 18650:18650/tcp
+    volumes:
+      - .:/app
+      - /app/node_modules
